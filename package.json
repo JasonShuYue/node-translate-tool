@@ -1,0 +1,13 @@
+{
+  "name": "translate-tool",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node-dev src/main.ts"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^17.0.23",
+    "commander": "^9.1.0"
+  }
+}

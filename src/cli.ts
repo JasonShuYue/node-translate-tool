@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { translate } from "./main";
 
 const { Command } = require("commander");
@@ -9,7 +10,7 @@ program
   .usage("<English>")
   .arguments("<English>")
   .action((word: string) => {
-    const result = translate(word);
+    translate(word);
   });
 
 program.parse(process.argv);

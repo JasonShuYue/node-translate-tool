@@ -5,6 +5,7 @@ import {
   IMap,
   ITransResult,
 } from "./interface";
+import { ServerResponse } from "http";
 
 const md5 = require("md5");
 const https = require("https");
@@ -54,7 +55,7 @@ export const translate = (word: string) => {
     method: "GET",
   };
 
-  const request = https.request(options, (response) => {
+  const request = https.request(options, (response: ServerResponse) => {
     const chunks: Buffer[] = [];
     response.on("data", (chunk: Buffer) => {
       chunks.push(chunk);
@@ -73,10 +74,6 @@ export const translate = (word: string) => {
         process.exit(0);
       }
     });
-  });
-
-  request.on("error", (e) => {
-    console.error("error:", e);
   });
 
   request.end();
